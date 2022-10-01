@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Company</title>
+</head>   
+
+<body>
+    <form method="POST" action="{% url 'create' %}">
+        {% csrf_token %}
+        <div>
+            <label>Name: </label>
+            <input type="text" name="name">
+        </div><br>
+        <div>
+            <label>Owner: </label>
+            <input type="nuber" name="owner">
+        </div><br>
+        <div>
+            <label>NIP: </label>
+            <input type="text" name="NIP">
+        </div>
+        <input type="submit" name="submit" value="submit">
+    </form>
+</body>
+</html>

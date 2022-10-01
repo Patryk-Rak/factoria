@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="main">
+    {% for data in dataset %}
+        NIP : {{ data.NIP }}<br/>
+        Name: {{ data.name }}<br/>
+        Owner : {{ data.owner }}<br/>
+    <hr/>
+    {% endfor %}
+</div>
+</body>
+</html>

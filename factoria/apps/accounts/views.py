@@ -21,7 +21,7 @@ def add_client(request):
             return redirect('success')
     else:
         form = ListForm()
-    return render(request, 'list2.html', {'form': form})
+    return render(request, 'website/accounts/list2.html', {'form': form})
 
 
 def success(request):
@@ -30,7 +30,7 @@ def success(request):
 def ListClient(request):
     model = Client.object.all()
     context = {'client':model}
-    return render(request, 'list.html', context)
+    return render(request, 'website/accounts/list.html', context)
 
 def detail_product(request, client_id):
     try:
@@ -38,7 +38,7 @@ def detail_product(request, client_id):
 
     except ObjectDoesNotExist:
         raise Http404("Client does not exist")
-    return render(request, 'detail_client.html', {'product': client})
+    return render(request, 'website/accounts/detail_client.html', {'product': client})
 
 
 
@@ -47,7 +47,7 @@ def delete_view(request, client_id):
     client = Client.object.get(pk=client_id)
     if request.method == 'POST':
         client.delete()
-    return render(request, 'delete_client.html', context)
+    return render(request, 'website/accounts/delete_client.html', context)
 
 def update_view(request, id):
     context = {}
@@ -63,7 +63,7 @@ def update_view(request, id):
         return HttpResponseRedirect("/")
 
     context = {"form": form}
-    return render(request, "updateclient.html", context)
+    return render(request, "'website/accounts/updateclient.html", context)
 
 def get_redirect_if_exists(request):
     redirect = None
@@ -85,9 +85,9 @@ def login_view(request):
             return redirect('delete')
 
         else:
-            return render(request, 'login.html')
+            return render(request, 'website/accounts.login.html')
     form = AuthenticationForm()
-    return render(request, 'login.html', { 'form':form})
+    return render(request, 'website/accounts/login.html', { 'form':form})
 
 
 

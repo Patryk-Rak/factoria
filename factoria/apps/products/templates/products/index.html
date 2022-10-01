@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!-- skąd on wie co to ??? -->
+    {% if ordering_list %}
+        <ul>
+            {% for product in  ordering_list %}
+<!--            pierwszy linijka to przykład hardcoded | druga zastosowane bez app name -->
+<!--            <li><a href="/product/{{ product.id }}/">{{ product.product_name }}</a></li> &lt;!&ndash; czy ten link jest ok ??? &ndash;&gt;-->
+                <li><a href="{% url 'products:product_detail_view' product.id %}">{{ product.product_name }}</a></li> <!-- czy ten link jest ok ??? -->
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p> No products are available.</p>
+    {% endif %}
+</body>
+</html>
