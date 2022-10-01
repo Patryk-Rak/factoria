@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Baza</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+      </script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+      </script>
+</head>
+<body>
+ {% for c in client %}
+    <li> {{ c.name }}</li>
+    {% if c.picture %}
+    <img src="{{ c.picture.url }}" width="100">
+
+    {% endif %}
+
+        <img src="{{ client.picture.url }}" class="img-responsive" style="width: 100%; float: left; margin-right: 10px;" />
+    {% endfor %}
+</body>
+</html>

@@ -3,13 +3,16 @@
 *.pot
 *.pyc
 __pycache__
+
 __pycache__/
 factoria/__pycache__
 factoria/apps/__pycache__
 factoria/__pycache__/
 factoria/apps/__pycache__/
+
 db.sqlite3
 media
+mediafiles
 
 # Backup files #
 *.bak
@@ -140,5 +143,11 @@ GitHub.sublime-settings
 !.vscode/launch.json
 !.vscode/extensions.json
 .history
+
+
+!factoria/apps/accounts/migrations/__init__.py
+
+
 # Migtations
 factoria/apps/business/migrations/
+factoria/apps/accounts/migrations/

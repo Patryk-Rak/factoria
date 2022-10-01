@@ -1,7 +1,10 @@
 from pathlib import Path
+
+
 from decouple import config
 import os
 import sys
+
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,7 +30,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'factoria.apps.accounts',
+
     'rest_framework',
+
 ]
 
 MIDDLEWARE = [
@@ -41,11 +47,13 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'factoria.urls'
-
+TEMPLATE_DIR = os.path.join(BASE_DIR,"templates")
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+
+        'DIRS': [TEMPLATE_DIR],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -93,6 +101,11 @@ USE_I18N = True
 
 USE_TZ = True
 
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
@@ -105,6 +118,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 PROJECT_ROOT = os.path.dirname(__file__)
 sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))
 TEMP = os.path.join(BASE_DIR, 'mediafiles/temp')
+
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
