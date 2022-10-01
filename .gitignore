@@ -136,3 +136,5 @@ GitHub.sublime-settings
 !.vscode/launch.json
 !.vscode/extensions.json
 .history
+factoria/apps/accounts/migrations/
+!factoria/apps/accounts/migrations/__init__.py
